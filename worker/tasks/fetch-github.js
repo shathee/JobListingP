@@ -25,11 +25,30 @@ async function fetchGithub() {
         onPage++;
     }
 
+    const jrJobs = allJobs.filter(job => {
+        const jobTitle = job.title.toLowerCase();
+        let isJunior = true;
+
+        if(
+            jobTitle.includes('senior') ||
+            jobTitle.includes('sr.') ||
+            jobTitle.includes('manager') ||
+            jobTitle.includes('architect')
+        ){
+            return false;
+        }
+
+        return true;
+    });
+
     console.log('Total ', allJobs.length, 'Jobs');
-    const success = setAsync('github', JSON.stringify(allJobs));
+    console.log('junior ', jrJobs.length, 'Jobs');
+    const success = setAsync('github', JSON.stringify(jrJobs));
 
     console.log({success});
 }
+
+
 
 // fetchGithub();
 
