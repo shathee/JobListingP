@@ -16,7 +16,7 @@ let jobCount = 1, onPage = 0;
 const allJobs = [];
 
 async function fetchGithub() {
-    while(jobCount >0 ) {
+    while(jobCount > 0 ) {
         const res = await fetch(`${baseURL}?page=${onPage}`);
         const jobs = await res.json();
         allJobs.push(...jobs);
