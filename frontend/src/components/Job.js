@@ -5,7 +5,7 @@ import './css/Job.css'
 
 export default function Job (props) {
     return (
-        <Paper className="job">
+        <Paper onClick={props.onClick} className="job">
             <div>
             <Typography variant="h6" align="left">
                 {props.job.title}

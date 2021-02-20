@@ -17,3 +17,25 @@
 .job-dialog {
     padding: 30px 50px;
 }
+
+.job-company-title-info{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    vertical-align: baseline;
+}
+.job-company-logo{
+    display: flex;
+    flex-direction: row;
+    vertical-align: middle;
+}
+.job-company-logo img{
+    height: 80px;
+    width: 80px;
+    vertical-align: middle;
+}
+.job-company-name{
+    vertical-align: text-bottom;
+    text-decoration: dashed;
+    padding: 20px 5px;
+}
