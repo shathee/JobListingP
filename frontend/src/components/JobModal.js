@@ -19,7 +19,6 @@ export default function JobModal(props) {
         return <div />
     }
 
-    console.log(props.job)
     return (
         <div>
             
@@ -33,25 +32,26 @@ export default function JobModal(props) {
             >
                 <DialogTitle id="alert-dialog-slide-title">
                     
-                    <div class="job-company-logo">
+                    <div className="job-company-logo">
                         <img src={props.job.company_logo} />
-                        <span class="job-company-name">{props.job.company}</span>
+                        <span className="job-company-name">{props.job.company}</span>
                     </div>
-                    <div class="job-company-title-info">
+                    <div className="job-company-title-info">
                         {props.job.title}
                         
                     </div>
                     
                 </DialogTitle>
                 <DialogContent>
-                
-                   {props.job.description}
-                  
-                
+                    <DialogContentText 
+                        id="alert-dialog-slide-description" 
+                       >
+                    
+                    </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                <Button onClick={props.handleClose}>Disagree</Button>
-                <Button onClick={props.handleClose}>Agree</Button>
+                {/* <Button onClick={props.handleClose}>Disagree</Button>
+                <Button onClick={props.handleClose}>Agree</Button> */}
                 </DialogActions>
             </Dialog>
         </div>

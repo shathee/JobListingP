@@ -1,4 +1,5 @@
 import React from "react";
+import AppBar from '@material-ui/core/AppBar';
 import Typography from '@material-ui/core/Typography';
 import MobileStepper from '@material-ui/core/MobileStepper';
 import Button from '@material-ui/core/Button';
@@ -38,13 +39,19 @@ export default function Jobs (props) {
 
     return (
         <div className="jobs">
-            <JobModal open={open} job={selectedJob} handleClose={handleClose} ></JobModal>
-            <Typography varient="h2" component="h1">
+            <AppBar position="fixed">
+                <Typography varient="h1" component="h1">
+                Github Api Job Board 
+                </Typography>
+                <Typography varient="h2" component="h2">
                 Entry Level Software Jobs
-            </Typography>
-            <Typography varient="h4" component="h4">
-                Total {numJobs} jobs found
-            </Typography>
+                </Typography>
+                <Typography varient="h4" component="h4">
+                    Total {numJobs} jobs found
+                </Typography>
+            </AppBar>
+            <JobModal open={open} job={selectedJob} handleClose={handleClose} ></JobModal>
+            
             {
                 jobsOnPage.map( (job, i) => <Job key={i} job={job} onClick={() => {
                     handleClickOpen(); selectJob(job)
