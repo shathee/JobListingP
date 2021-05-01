@@ -1,5 +1,5 @@
 import React from "react";
-import AppBar from '@material-ui/core/AppBar';
+
 import Typography from '@material-ui/core/Typography';
 import MobileStepper from '@material-ui/core/MobileStepper';
 import Button from '@material-ui/core/Button';
@@ -8,6 +8,8 @@ import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 
 import Job from './Job';
 import JobModal from './JobModal';
+
+import styles from './css/jobs.module.css'
 
 
 export default function Jobs (props) {
@@ -38,18 +40,13 @@ export default function Jobs (props) {
     };
 
     return (
-        <div className="jobs">
-            <AppBar position="fixed">
-                <Typography varient="h1" component="h1">
-                Github Api Job Board 
-                </Typography>
-                <Typography varient="h2" component="h2">
-                Entry Level Software Jobs
-                </Typography>
-                <Typography varient="h4" component="h4">
-                    Total {numJobs} jobs found
-                </Typography>
-            </AppBar>
+        <div className={styles.jobs}>
+         <Typography varient="h2" component="h2">
+          Entry Level Software Jobs
+          </Typography>
+          <Typography varient="h4" component="h4">
+              Total {numJobs} jobs found
+          </Typography>
             <JobModal open={open} job={selectedJob} handleClose={handleClose} ></JobModal>
             
             {
@@ -58,10 +55,8 @@ export default function Jobs (props) {
                     }} /> 
                 )
             }
-            <div>
-                Page {activeStep + 1} of {pageNum}
-            </div>
-            <MobileStepper
+            
+            <MobileStepper style={{'padding-top':'10px;'}}
                 variant="progress"
                 steps={pageNum}
                 position="static"
@@ -79,7 +74,9 @@ export default function Jobs (props) {
                     </Button>
                 }
                 />
-
+                <div style={{'padding-top':'10px;'}}>
+                    Page {activeStep + 1} of {pageNum}
+                </div>
 
         </div>
         
